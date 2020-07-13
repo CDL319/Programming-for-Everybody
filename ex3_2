@@ -1,0 +1,31 @@
+# Exercise 3.2: Rewrite your pay program using try and except so that your
+# program handles non-numerical input gracefully by printing a message and
+# exiting the program. The folowing shows two executions of the program:
+# Enter Hours: 20
+# Enter Rate : nine
+# Error, please enter numeric input
+# Enter Hours: forty
+# Error, please enter numeric input
+
+hrs = input ("How many hours:")
+try:
+    h=float(hrs)
+except ValueError:
+    print ("Error, please enter numeric input")
+    quit()
+pay = input ("What is your rate of pay:")
+try:
+    p=float(pay)
+except ValueError:
+    print ("Error, please enter numeric input")
+    quit()
+if h>40 :
+    #overtime
+    reg = (h*p)
+    ot = (h-40) * (p*0.5)
+    total = reg + ot
+else :
+    #regular pay
+    total = (h* p)
+
+print ("Pay:" , total)
